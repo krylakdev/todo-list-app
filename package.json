@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "ng lint",
+    "format": "prettier --write \"src/**/*.{ts,html,css,scss}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,html,css,scss}\""
   },
   "private": true,
   "dependencies": {
@@ -29,13 +32,21 @@
     "@angular/compiler-cli": "^18.2.0",
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "19.0.0",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.5.2"
+    "prettier": "^3.4.1",
+    "prettier-plugin-organize-attributes": "^1.0.0",
+    "typescript": "~5.5.2",
+    "typescript-eslint": "8.16.0"
   }
 }
