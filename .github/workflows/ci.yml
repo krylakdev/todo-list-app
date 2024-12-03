@@ -53,12 +53,12 @@ jobs:
           TEST_STATUS="passing"
           TEST_COLOR="brightgreen"
           if [ "${{ steps.test.outcome }}" != "success" ]; then
-          TEST_STATUS="failing"
-          TEST_COLOR="red"
+            TEST_STATUS="failing"
+            TEST_COLOR="red"
           fi
 
-          sed -i 's|!\[Build Status\](.*)|![Build Status](https://img.shields.io/badge/build-$BUILD_STATUS-$BUILD_COLOR)|g' README.md
-          sed -i 's|!\[Test Status\](.*)|![Test Status](https://img.shields.io/badge/tests-$TEST_STATUS-$TEST_COLOR)|g' README.md
+          sed -i "s|!\[Build Status\](.*)|![Build Status](https://img.shields.io/badge/build-${BUILD_STATUS}-${BUILD_COLOR})|g" README.md
+          sed -i "s|!\[Test Status\](.*)|![Test Status](https://img.shields.io/badge/tests-${TEST_STATUS}-${TEST_COLOR})|g" README.md
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
