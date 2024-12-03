@@ -39,29 +39,3 @@ jobs:
       - name: Build the project
         run: |
           npm run build --prod
-
-      - name: Update README.md with badges
-        if: always()
-        run: |
-          BUILD_STATUS="passing"
-          BUILD_COLOR="brightgreen"
-          if [ "${{ steps.build.outcome }}" != "success" ]; then
-            BUILD_STATUS="failing"
-            BUILD_COLOR="red"
-          fi
-
-          TEST_STATUS="passing"
-          TEST_COLOR="brightgreen"
-          if [ "${{ steps.test.outcome }}" != "success" ]; then
-            TEST_STATUS="failing"
-            TEST_COLOR="red"
-          fi
-
-          sed -i "s|!\[Build Status\](.*)|![Build Status](https://img.shields.io/badge/build-${BUILD_STATUS}-${BUILD_COLOR})|g" README.md
-          sed -i "s|!\[Test Status\](.*)|![Test Status](https://img.shields.io/badge/tests-${TEST_STATUS}-${TEST_COLOR})|g" README.md
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "docs: update badges [skip ci]" || echo "No changes to commit"
-          git push
