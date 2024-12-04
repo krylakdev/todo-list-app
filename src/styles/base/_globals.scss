@@ -1,0 +1,11 @@
+@use 'themes';
+
+body {
+  @include themes.light-theme();
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark-mode {
+  @include themes.dark-theme();
+}

@@ -1,0 +1,21 @@
+@use 'constants';
+
+@mixin mq($breakpoint: null, $orientation: null) {
+  $value: if($breakpoint, map-get(constants.$breakpoints, $breakpoint), null);
+
+  @if $value and $orientation {
+    @media (min-width: $value) and (orientation: $orientation) {
+      @content;
+    }
+  } @else if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else if $orientation {
+    @media (orientation: $orientation) {
+      @content;
+    }
+  } @else {
+    @warn "No valid breakpoint or orientation provided.";
+  }
+}

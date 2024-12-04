@@ -1,0 +1,21 @@
+$background-color: #fff;
+$text-color: #123;
+$primary-color: #bb86fc;
+$secondary-color: #03dac6;
+$error-color: #cf6679;
+
+$light-theme-colors: (
+  background: $background-color,
+  text: $text-color,
+  primary: $primary-color,
+  secondary: $secondary-color,
+  error: $error-color,
+);
+
+@mixin theme() {
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --error-color: #{$error-color};
+}
