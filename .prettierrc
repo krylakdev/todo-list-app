@@ -11,7 +11,7 @@
   "printWidth": 120,
   "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-organize-attributes"],
   "importOrderParserPlugins": ["typescript", "decorators-legacy"],
-  "importOrder": ["^@angular$", "rxjs", "^\\w", "^[./]"],
+  "importOrder": ["^@angular$", "rxjs", "^(@core|@features)(/.*|$)", "^\\w", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "attributeGroups": [
