@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.theme-switcher {
+  $self: &;
+
+  display: block;
+  position: relative;
+  width: 160px;
+  height: 80px;
+
+  &__input {
+    position: relative;
+    appearance: none;
+    z-index: 1;
+
+    &:checked ~ #{$self}__element::before {
+      left: 50%;
+      //right: 10%;
+    }
+  }
+
+  &__element {
+    position: absolute;
+    inset: 0;
+    background-color: red;
+    border-radius: 80px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      translate: 0 -50%;
+      width: 64px;
+      height: 64px;
+      background-color: green;
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+  }
+}
