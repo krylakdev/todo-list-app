@@ -23,7 +23,7 @@ export class ThemeSwitcherService {
   }
 
   toggleTheme(): void {
-    console.log('toggleTheme');
+    this.theme.set(this.theme() === 'light' ? 'dark' : 'light');
   }
 
   #setTheme(theme: Theme): void {
