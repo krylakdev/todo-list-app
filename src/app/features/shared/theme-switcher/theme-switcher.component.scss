@@ -17,7 +17,6 @@
 
     &:checked ~ #{$self}__element::before {
       left: 50%;
-      //right: 10%;
     }
   }
 
