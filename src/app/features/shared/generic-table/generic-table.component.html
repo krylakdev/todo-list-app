@@ -10,7 +10,13 @@
     @for (row of rowsData(); track row.id) {
       <tr class="generic-table__row">
         @for (column of columnsConfig(); track $index) {
-          <td class="generic-table__cell">{{ row[column.property] }}</td>
+          <td class="generic-table__cell">
+            @if (column.computeValue) {
+              {{ column.computeValue(row) }}
+            } @else {
+              {{ row[column.property] }}
+            }
+          </td>
         }
       </tr>
     }
