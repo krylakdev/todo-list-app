@@ -22,6 +22,7 @@
     "paths": {
       "@core/data-access": ["src/app/core/data-access/index.ts"],
       "@core/models": ["src/app/core/models/index.ts"],
+      "@core/pipes": ["src/app/core/pipes/index.ts"],
       "@core/services": ["src/app/core/services/index.ts"],
       "@core/stores": ["src/app/core/stores/index.ts"],
       "@features/shared": ["src/app/features/shared/index.ts"]
