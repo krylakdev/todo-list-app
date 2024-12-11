@@ -14,5 +14,39 @@
 }
 
 .generic-table {
+  $self: &;
+
   width: 100%;
+  cursor: default;
+
+  &__row {
+    border-bottom: 1px solid var(--text-color);
+  }
+
+  &__cell {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  &__header {
+    #{$self}__cell {
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+  }
+
+  &__body {
+    #{$self}__row {
+      transition: 0.2s;
+
+      &:hover {
+        // TODO change color to theme variable
+        background-color: red;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
 }
