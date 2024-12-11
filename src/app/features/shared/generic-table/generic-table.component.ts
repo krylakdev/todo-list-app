@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+
+import { ColumnConfig } from './models';
 
 @Component({
   selector: 'app-generic-table',
@@ -8,4 +10,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './generic-table.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GenericTableComponent {}
+export class GenericTableComponent<T extends { id: string }> {
+  columnsConfig = input.required<ColumnConfig<T>[]>();
+  rowsData = input.required<T[]>();
+}

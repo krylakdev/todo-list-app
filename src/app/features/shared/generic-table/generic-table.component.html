@@ -1,1 +1,18 @@
-<p>generic-table works!</p>
+<table class="generic-table">
+  <thead class="generic-table__header">
+    <tr class="generic-table__row">
+      @for (column of columnsConfig(); track $index) {
+        <th class="generic-table__cell generic-table__cell--header">{{ column.label }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody class="generic-table__body">
+    @for (row of rowsData(); track row.id) {
+      <tr class="generic-table__row">
+        @for (column of columnsConfig(); track $index) {
+          <td class="generic-table__cell">{{ row[column.property] }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>
