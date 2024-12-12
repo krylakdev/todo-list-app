@@ -22,5 +22,12 @@ export const TASK_LIST_COLUMN_CONFIG: ColumnConfig<Task>[] = [
     type: 'date',
     label: 'date created',
     property: 'dateCreated',
+    computeValue: ({ dateCreated }) => dateCreated.toLocaleDateString(),
+  },
+  {
+    type: 'date',
+    label: 'date completed',
+    property: 'dateCompleted',
+    computeValue: ({ dateCompleted }) => (dateCompleted ? dateCompleted.toLocaleDateString() : '-'),
   },
 ];
