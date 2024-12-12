@@ -8,7 +8,33 @@ interface TasksState {
 }
 
 const initialState: TasksState = {
-  tasks: [],
+  tasks: [
+    // TODO temp data -> remove after implementation Add Task
+    {
+      id: crypto.randomUUID(),
+      isImportant: false,
+      name: 'task 1',
+      description: 'Lorem Impsum Dolores...',
+      dateCreated: new Date(),
+      dateCompleted: null,
+    },
+    {
+      id: crypto.randomUUID(),
+      isImportant: true,
+      name: 'task 2',
+      description: '',
+      dateCreated: new Date(),
+      dateCompleted: null,
+    },
+    {
+      id: crypto.randomUUID(),
+      isImportant: false,
+      name: 'task 3',
+      description: 'Lorem Impsum Dolores...',
+      dateCreated: new Date(),
+      dateCompleted: null,
+    },
+  ],
 };
 
 export const TasksStore = signalStore(
