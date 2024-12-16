@@ -1,12 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
 
 import { ThemeSwitcherService } from '@core/services';
+import { HeaderPanelComponent } from '@features/header-panel';
 import { TaskListComponent } from '@features/task-list';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TaskListComponent],
+  imports: [TaskListComponent, HeaderPanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
