@@ -1,14 +1,6 @@
 @use 'utils/constants';
+@use 'utils/placeholders' as *;
 
 :host {
-  display: block;
-  //margin: 1rem auto;
-  padding: 1rem 2rem;
-  //width: min(calc(100% - 2rem));
-  background-color: var(--card-color);
-  backdrop-filter: blur(10px);
-  border-radius: constants.$card-roundness;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.3),
-    0 6px 20px rgba(0, 0, 0, 0.2);
+  @extend %card-container;
 }
