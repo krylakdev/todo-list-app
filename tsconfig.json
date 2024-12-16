@@ -25,6 +25,7 @@
       "@core/pipes": ["src/app/core/pipes/index.ts"],
       "@core/services": ["src/app/core/services/index.ts"],
       "@core/stores": ["src/app/core/stores/index.ts"],
+      "@features/header-panel": ["src/app/features/header-panel/index.ts"],
       "@features/task-list": ["src/app/features/task-list/index.ts"],
       "@features/shared": ["src/app/features/shared/index.ts"]
     }

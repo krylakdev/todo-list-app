@@ -1,0 +1,16 @@
+@use 'utils/constants';
+@use 'utils/placeholders' as *;
+
+:host {
+  @extend %card-container;
+}
+
+.header-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__heading {
+    letter-spacing: 0.5rem;
+  }
+}
