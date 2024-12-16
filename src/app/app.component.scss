@@ -1,0 +1,21 @@
+@use 'utils/mixins';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  --inline-padding: 1rem;
+
+  margin: 0 auto;
+  width: min(calc(100% - var(--inline-padding)), 1920px);
+
+  @include mixins.mq('laptop-sm') {
+    --inline-padding: 2rem;
+  }
+
+  @include mixins.mq('desktop-sm') {
+    --inline-padding: 3rem;
+  }
+}
