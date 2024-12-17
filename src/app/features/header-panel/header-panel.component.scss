@@ -1,16 +1,44 @@
 @use 'utils/constants';
+@use 'utils/mixins';
 @use 'utils/placeholders' as *;
 
 :host {
-  @extend %card-container;
+  display: block;
 }
 
 .header-panel {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__card {
+    @extend %card-container;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &--headings {
+      justify-content: center;
+    }
+
+    &--actions {
+      justify-content: flex-end;
+    }
+  }
 
   &__heading {
+    text-align: center;
     letter-spacing: 0.5rem;
+  }
+
+  @include mixins.mq('tablet') {
+    flex-direction: row;
+
+    &__card {
+      &--headings {
+        justify-content: flex-start;
+        flex-grow: 1;
+      }
+    }
   }
 }
