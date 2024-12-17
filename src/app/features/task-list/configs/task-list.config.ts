@@ -1,6 +1,8 @@
 import { Task } from '@core/models';
 import { ColumnConfig } from '@features/shared';
 
+import { format } from 'date-fns';
+
 export const TASK_LIST_COLUMN_CONFIG: ColumnConfig<Task>[] = [
   {
     type: 'text',
@@ -22,12 +24,12 @@ export const TASK_LIST_COLUMN_CONFIG: ColumnConfig<Task>[] = [
     type: 'date',
     label: 'date created',
     property: 'dateCreated',
-    computeValue: ({ dateCreated }) => dateCreated.toLocaleDateString(),
+    computeValue: ({ dateCreated }) => format(dateCreated, 'dd-MM-yyyy hh:mm'),
   },
   {
     type: 'date',
     label: 'date completed',
     property: 'dateCompleted',
-    computeValue: ({ dateCompleted }) => (dateCompleted ? dateCompleted.toLocaleDateString() : '-'),
+    computeValue: ({ dateCompleted }) => (dateCompleted ? format(dateCompleted, 'dd-MM-yyyy hh:mm') : '-'),
   },
 ];
