@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Signal, inject } from '@angular/core';
 
 import { Task } from '@core/models';
@@ -9,7 +10,7 @@ import { TASK_LIST_COLUMN_CONFIG } from './configs';
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [GenericTableComponent],
+  imports: [GenericTableComponent, NgOptimizedImage],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

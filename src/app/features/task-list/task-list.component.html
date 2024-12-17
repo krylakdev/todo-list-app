@@ -4,9 +4,21 @@
     [rowsData]="tasksList()"
     class="task-list__card task-list__card--table" />
   <div class="task-list__card task-list__card--stats">
-    <p>{{ tasksCountAll() }}</p>
-    <p>{{ tasksCountIsImportant() }}</p>
-    <p>{{ tasksCountUncompleted() }}</p>
-    <p>{{ tasksCountCompleted() }}</p>
+    <p>
+      <img [width]="36" [height]="36" ngSrc="icons/info-circle.svg" alt="icon of total tasks count" />
+      <span>{{ tasksCountAll() }}</span>
+    </p>
+    <p>
+      <img [width]="36" [height]="36" ngSrc="icons/close-circle.svg" alt="icon of uncompleted tasks count" />
+      <span>{{ tasksCountUncompleted() }}</span>
+    </p>
+    <p>
+      <img [width]="36" [height]="36" ngSrc="icons/check-circle.svg" alt="icon of completed tasks count" />
+      <span>{{ tasksCountCompleted() }}</span>
+    </p>
+    <p>
+      <img [width]="36" [height]="36" ngSrc="icons/important-circle.svg" alt="icon of important tasks count" />
+      <span>{{ tasksCountIsImportant() }}</span>
+    </p>
   </div>
 </section>
