@@ -16,11 +16,6 @@ export const TASK_LIST_COLUMN_CONFIG: ColumnConfig<Task>[] = [
     property: 'name',
   },
   {
-    type: 'text',
-    label: 'description man',
-    property: 'description',
-  },
-  {
     type: 'date',
     label: 'date created',
     property: 'dateCreated',
