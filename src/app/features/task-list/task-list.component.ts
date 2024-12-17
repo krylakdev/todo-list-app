@@ -19,4 +19,8 @@ export class TaskListComponent {
 
   readonly taskListColumnConfig: ColumnConfig<Task>[] = TASK_LIST_COLUMN_CONFIG;
   tasksList: Signal<Task[]> = this.#tasksStore.tasks;
+  tasksCountAll: Signal<number> = this.#tasksStore.tasksCountAll;
+  tasksCountIsImportant: Signal<number> = this.#tasksStore.tasksCountIsImportant;
+  tasksCountUncompleted: Signal<number> = this.#tasksStore.tasksCountUncompleted;
+  tasksCountCompleted: Signal<number> = this.#tasksStore.tasksCountCompleted;
 }

@@ -1,6 +1,30 @@
-@use 'utils/constants';
+@use 'utils/mixins';
 @use 'utils/placeholders' as *;
 
 :host {
-  @extend %card-container;
+  display: block;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__card {
+    @extend %card-container;
+  }
+
+  @include mixins.mq('laptop') {
+    flex-direction: row;
+
+    &__card {
+      &--table {
+        flex-grow: 1;
+      }
+
+      &--stats {
+        order: -1;
+      }
+    }
+  }
 }

@@ -1,1 +1,12 @@
-<app-generic-table [columnsConfig]="taskListColumnConfig" [rowsData]="tasksList()" />
+<section class="task-list">
+  <app-generic-table
+    [columnsConfig]="taskListColumnConfig"
+    [rowsData]="tasksList()"
+    class="task-list__card task-list__card--table" />
+  <div class="task-list__card task-list__card--stats">
+    <p>{{ tasksCountAll() }}</p>
+    <p>{{ tasksCountIsImportant() }}</p>
+    <p>{{ tasksCountUncompleted() }}</p>
+    <p>{{ tasksCountCompleted() }}</p>
+  </div>
+</section>
