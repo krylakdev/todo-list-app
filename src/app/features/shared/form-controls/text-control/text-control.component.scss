@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.form-field {
+  width: 100%;
+
+  &__input {
+    width: 100%;
+  }
+}
