@@ -9,8 +9,11 @@
 .content-container {
   --inline-padding: 1rem;
 
+  display: flex;
   margin: 0 auto;
   width: min(calc(100% - var(--inline-padding)), 1920px);
+  flex-direction: column;
+  gap: 2rem;
 
   @include mixins.mq('laptop-sm') {
     --inline-padding: 2rem;
