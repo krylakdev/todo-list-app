@@ -1,0 +1,6 @@
+@use 'utils/mixins';
+@use 'utils/placeholders' as *;
+
+:host {
+  @extend %card-container;
+}
