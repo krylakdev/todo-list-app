@@ -10,7 +10,7 @@ button {
   box-shadow: 0 0.2rem 0 0 var(--text-color);
   transition: 0.2s;
 
-  &:active {
+  &:active:not(:disabled) {
     box-shadow: none;
     transform: translateY(0.2rem);
   }
