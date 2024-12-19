@@ -3,7 +3,7 @@ $card-color: #0000007f;
 $text-color: #ffffff;
 $primary-color: #ddd;
 $secondary-color: #03dac6;
-$error-color: #cf6679;
+$error-color: #ff2611;
 
 @mixin theme() {
   --background-color: #{$background-color};
