@@ -1,0 +1,17 @@
+button {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-color);
+  background-color: transparent;
+  border-radius: 1rem;
+  border: 1px solid var(--text-color);
+  box-shadow: 0 0.2rem 0 0 var(--text-color);
+  transition: 0.2s;
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0.2rem);
+  }
+}
