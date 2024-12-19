@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, InputSignal, forwardRef, input } fr
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 
 import { FormControlAbstractDirective } from '../directives';
+import { FormControlErrorPipe } from '../pipes';
 
 @Component({
   selector: 'app-text-control',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FormControlErrorPipe],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
