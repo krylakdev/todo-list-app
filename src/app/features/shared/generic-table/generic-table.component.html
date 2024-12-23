@@ -8,7 +8,7 @@
   </thead>
   <tbody class="generic-table__body">
     @for (row of rowsData(); track row.id) {
-      <tr class="generic-table__row">
+      <tr (click)="rowClick.emit(row.id)" class="generic-table__row">
         @for (column of columnsConfig(); track $index) {
           <td class="generic-table__cell">
             @if (column.computeValue) {
