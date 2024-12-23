@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { Task } from '@core/models';
+import { TasksStore } from '@core/stores';
 import { TextControlComponent } from '@features/shared';
 
 import { TaskForm, TaskFormValues } from './models';
@@ -16,21 +17,18 @@ import { TaskFormAdapterService } from './services';
   styleUrl: './task-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TaskFormComponent implements OnInit {
+export class TaskFormComponent {
+  readonly #tasksStore = inject(TasksStore);
   readonly #taskFormAdapter = inject(TaskFormAdapterService);
 
   form: FormGroup<TaskForm> = this.#taskFormAdapter.createForm();
-
-  ngOnInit(): void {
-    this.form.valueChanges.subscribe(console.log);
-  }
 
   handleSubmitForm(): void {
     if (this.form.invalid) return;
 
     const payload: Task = this.#generatePayload(this.form.value as TaskFormValues);
 
-    console.log('submit', payload);
+    this.#tasksStore.addTask(payload);
 
     this.#resetForm();
   }

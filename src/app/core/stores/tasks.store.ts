@@ -1,5 +1,5 @@
 import { computed } from '@angular/core';
-import { signalStore, withComputed, withState } from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
 
 import { Task } from '@core/models';
 
@@ -42,5 +42,10 @@ export const TasksStore = signalStore(
     tasksCountIsImportant: computed((): number => tasks().filter(task => task.isImportant).length),
     tasksCountUncompleted: computed((): number => tasks().filter(task => !task.dateCompleted).length),
     tasksCountCompleted: computed((): number => tasks().filter(task => !!task.dateCompleted).length),
+  })),
+  withMethods(store => ({
+    addTask(task: Task): void {
+      patchState(store, state => ({ tasks: [...state.tasks, task] }));
+    },
   }))
 );
