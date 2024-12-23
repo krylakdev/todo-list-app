@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
+import { Task } from '@core/models';
 import { TextControlComponent } from '@features/shared';
 
-import { TaskForm } from './models';
+import { TaskForm, TaskFormValues } from './models';
 import { TaskFormAdapterService } from './services';
 
 @Component({
@@ -27,6 +28,26 @@ export class TaskFormComponent implements OnInit {
   handleSubmitForm(): void {
     if (this.form.invalid) return;
 
-    console.log('submit');
+    const payload: Task = this.#generatePayload(this.form.value as TaskFormValues);
+
+    console.log('submit', payload);
+
+    this.#resetForm();
+  }
+
+  #generatePayload(formValues: TaskFormValues): Task {
+    const { name, isImportant } = formValues;
+
+    return {
+      name,
+      isImportant,
+      id: crypto.randomUUID(),
+      dateCreated: new Date(),
+      dateCompleted: null,
+    };
+  }
+
+  #resetForm(): void {
+    this.form.reset();
   }
 }

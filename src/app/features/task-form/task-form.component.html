@@ -1,1 +1,8 @@
-<p>task-form works!</p>
+<form (submit)="handleSubmitForm()" [formGroup]="form" class="task-form">
+  <app-text-control
+    id="taskContentInput"
+    formControlName="name"
+    label="task content"
+    placeholder="Write your task here..." />
+  <button [disabled]="form.invalid" type="submit">Add Task</button>
+</form>
