@@ -23,16 +23,16 @@ describe(TaskFormAdapterService.name, () => {
     it('should create a form group with the expected controls', () => {
       const form: FormGroup<TaskForm> = service.createForm();
 
-      expect(form.contains('taskContent')).toBe(true);
+      expect(form.contains('name')).toBe(true);
       expect(form.contains('isImportant')).toBe(true);
 
-      expect(form.controls.taskContent.value).toBe('');
+      expect(form.controls.name.value).toBe('');
       expect(form.controls.isImportant.value).toBe(false);
     });
 
     it('should validate taskContent correctly', () => {
       const form: FormGroup<TaskForm> = service.createForm();
-      const taskContentControl: FormControl<string> = form.controls.taskContent;
+      const taskContentControl: FormControl<string> = form.controls.name;
 
       expect(taskContentControl.valid).toBe(false);
       expect(taskContentControl.errors).toEqual({ required: true });
