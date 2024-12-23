@@ -19,12 +19,12 @@ export const TASK_LIST_COLUMN_CONFIG: ColumnConfig<Task>[] = [
     type: 'date',
     label: 'date created',
     property: 'dateCreated',
-    computeValue: ({ dateCreated }) => format(dateCreated, 'dd-MM-yyyy hh:mm'),
+    computeValue: ({ dateCreated }) => format(dateCreated, 'dd-MM-yyyy HH:mm'),
   },
   {
     type: 'date',
     label: 'date completed',
     property: 'dateCompleted',
-    computeValue: ({ dateCompleted }) => (dateCompleted ? format(dateCompleted, 'dd-MM-yyyy hh:mm') : '-'),
+    computeValue: ({ dateCompleted }) => (dateCompleted ? format(dateCompleted, 'dd-MM-yyyy HH:mm') : '-'),
   },
 ];
