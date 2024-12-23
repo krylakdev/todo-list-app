@@ -42,6 +42,7 @@ export const TasksStore = signalStore(
     tasksCountIsImportant: computed((): number => tasks().filter(task => task.isImportant).length),
     tasksCountUncompleted: computed((): number => tasks().filter(task => !task.dateCompleted).length),
     tasksCountCompleted: computed((): number => tasks().filter(task => !!task.dateCompleted).length),
+    sortedByImportant: computed((): Task[] => tasks().sort((a, b) => +b.isImportant - +a.isImportant)),
   })),
   withMethods(store => ({
     addTask(task: Task): void {
