@@ -19,5 +19,5 @@ export class TaskListComponent {
   readonly #tasksStore = inject(TasksStore);
 
   readonly taskListColumnConfig: ColumnConfig<Task>[] = TASK_LIST_COLUMN_CONFIG;
-  tasksList: Signal<Task[]> = this.#tasksStore.tasks;
+  tasksList: Signal<Task[]> = this.#tasksStore.entities;
 }

@@ -28,7 +28,7 @@ export class TaskFormComponent {
 
     const payload: Task = this.#generatePayload(this.form.value as TaskFormValues);
 
-    this.#tasksStore.addTask(payload);
+    this.#tasksStore.add(payload);
 
     this.#resetForm();
   }
