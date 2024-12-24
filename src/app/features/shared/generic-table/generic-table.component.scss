@@ -13,6 +13,27 @@
 
   &__row {
     border-bottom: 1px solid var(--text-color);
+
+    &--highlight {
+      background-color: yellow;
+    }
+
+    &--line-through {
+      #{$self}__cell {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 0;
+          right: 0;
+          height: 1px;
+          translate: 0 -50%;
+          background-color: red;
+        }
+      }
+    }
   }
 
   &__cell {

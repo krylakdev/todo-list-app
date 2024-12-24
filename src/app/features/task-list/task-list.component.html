@@ -1,6 +1,9 @@
 <section class="task-list">
   <div class="task-list__card task-list__card--table">
-    <app-generic-table [columnsConfig]="taskListColumnConfig" [rowsData]="tasksList()" />
+    <app-generic-table
+      [columnsConfig]="taskListColumnConfig"
+      [rowsConfig]="taskListRowConfig"
+      [rowsData]="tasksList()" />
   </div>
   <div class="task-list__card task-list__card--stats">
     <app-task-list-stats />

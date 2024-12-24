@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 
-import { ColumnConfig } from './models';
+import { ColumnConfig, RowConfig } from './models';
 
 @Component({
   selector: 'app-generic-table',
@@ -13,6 +13,7 @@ import { ColumnConfig } from './models';
 export class GenericTableComponent<T extends { id: string }> {
   columnsConfig = input.required<ColumnConfig<T>[]>();
   rowsData = input.required<T[]>();
+  rowsConfig = input<RowConfig<T>>({});
 
   rowClick = output<string>();
 }
