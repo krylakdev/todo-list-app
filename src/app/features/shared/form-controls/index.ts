@@ -1,1 +1,1 @@
-export * from './text-control/text-control.component';
+export * from './controls';
