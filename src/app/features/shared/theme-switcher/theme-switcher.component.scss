@@ -4,40 +4,50 @@
 
 .theme-switcher {
   $self: &;
-  $size: 40px;
+  $width-of-switch: 3.5em;
+  $height-of-switch: 2em;
+  $size-of-icon: 1.4em;
+  $slider-offset: 0.3em;
 
   display: block;
   position: relative;
-  width: $size * 2;
-  height: $size;
+  width: $width-of-switch;
+  height: $height-of-switch;
 
   &__input {
-    position: relative;
     appearance: none;
-    z-index: 1;
 
-    &:checked ~ #{$self}__element::before {
-      left: 54%;
+    &:checked + #{$self}__element {
+      background: var(--primary-color);
+
+      &::before {
+        left: calc(100% - ($size-of-icon + $slider-offset));
+        background: var(--primary-color);
+        box-shadow:
+          inset -3px -2px 5px -2px #8983f7,
+          inset -10px -4px 0 0 #a3dafb;
+      }
     }
   }
 
   &__element {
     position: absolute;
     inset: 0;
-    background-color: red;
-    border-radius: 80px;
+    border-radius: 1em;
+    background-color: var(--primary-color);
+    transition: 0.2s;
     cursor: pointer;
 
     &::before {
       content: '';
       position: absolute;
+      left: $slider-offset;
       top: 50%;
-      left: 10%;
+      height: $size-of-icon;
+      width: $size-of-icon;
+      border-radius: 1em;
       translate: 0 -50%;
-      width: $size - calc($size / 4);
-      height: $size - calc($size / 4);
-      background-color: green;
-      border-radius: 50%;
+      background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
       transition: 0.2s;
     }
   }
