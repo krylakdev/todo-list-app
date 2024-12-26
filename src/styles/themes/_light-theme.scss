@@ -4,6 +4,7 @@ $text-color: #123;
 $primary-color: #f4f4f5;
 $secondary-color: #03dac6;
 $error-color: #cf0000;
+$highlight-color: #cf0000;
 
 @mixin theme() {
   --background-color: #{$background-color};
@@ -12,4 +13,5 @@ $error-color: #cf0000;
   --primary-color: #{$primary-color};
   --secondary-color: #{$secondary-color};
   --error-color: #{$error-color};
+  --highlight-color: #{$highlight-color};
 }

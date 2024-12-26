@@ -15,7 +15,7 @@
     border-bottom: 1px solid var(--text-color);
 
     &--highlight {
-      background-color: yellow;
+      background-color: var(--highlight-color);
     }
 
     &--line-through {
@@ -53,8 +53,7 @@
       transition: 0.2s;
 
       &:hover {
-        // TODO change color to theme variable
-        background-color: red;
+        background-color: var(--primary-color);
       }
 
       &:last-child {

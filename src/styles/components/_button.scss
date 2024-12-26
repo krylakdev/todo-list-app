@@ -18,4 +18,8 @@ button {
   &:disabled {
     cursor: not-allowed;
   }
+
+  &.primary {
+    background-color: var(--primary-color);
+  }
 }
